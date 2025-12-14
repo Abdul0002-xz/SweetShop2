@@ -1,0 +1,74 @@
+# SweetShop2 - Full-Stack E-commerce Application
+
+## A. Project Explanation
+
+**SweetShop2** is a modern, full-stack web application designed for an e-commerce sweet shop, complete with product listings, user management, and administrative inventory control.
+
+The project is architecturally separated into two main components:
+1.  **Backend (API Server):** A robust RESTful API built with Node.js and the Express framework, utilizing MongoDB as the database via Mongoose. It handles all business logic, data persistence, user authentication (using JWT), and authorization (Admin/User roles).
+2.  **Frontend (Web Interface):** A responsive and dynamic Single Page Application (SPA) built with React and bundled using Vite. It consumes the REST API to provide users with a clean interface for browsing products, searching, user registration/login, and administrative tools.
+
+### Key Features
+* **User Authentication:** Secure registration and login using JWT (JSON Web Tokens) and password hashing (bcryptjs).
+* **Product Catalog:** Users can view a list of all available sweets, complete with images, descriptions, and pricing.
+* **Search Functionality:** Filter and search through the sweets catalog.
+* **Role-Based Access Control:** Differentiates between regular users and administrative users for restricted actions.
+* **Admin Tools:** Dedicated features (handled by the backend's `inventory.controller.js`) for administrative users to add, edit, and delete sweet products and manage inventory.
+* **Protected Routes:** Middleware ensures sensitive API routes are only accessible with a valid authentication token and correct user role.
+
+## B. Local Setup and Running Instructions
+
+Follow these steps to set up and run the SweetShop2 application locally.
+
+### Prerequisites
+
+You must have the following installed on your system:
+* [Node.js (LTS)](https://nodejs.org/en/)
+* [npm](https://www.npmjs.com/get-npm) (comes with Node.js)
+* A running instance of **MongoDB** (either locally or a hosted solution like MongoDB Atlas).
+
+### 1. Backend Setup (API)
+
+The backend runs on Node.js/Express and serves the REST API.
+
+#### 1.1. Environment Variables
+
+Navigate to the `backend` directory and create a file named `.env`. Populate it with your specific configuration:
+
+```bash
+
+PORT=8000
+
+
+MONGODB_URI="mongodb://127.0.0.1:27017/sweetshopdb"
+
+
+ACCESS_TOKEN_SECRET="YOUR_ACCESS_TOKEN_SECRET"
+REFRESH_TOKEN_SECRET="YOUR_REFRESH_TOKEN_SECRET"
+
+
+ACCESS_TOKEN_EXPIRY="1d"
+REFRESH_TOKEN_EXPIRY="10d"
+
+
+CORS_ORIGIN="http://localhost:5173"
+
+## C. My AI Usage
+
+This section documents the instances where an Artificial Intelligence assistant was used in the development and documentation process.
+
+The AI assistant, Gemini (Google), was utilized for:
+
+Project Documentation Generation: Created the comprehensive, multi-section README.md file, including the initial project explanation and detailed setup instructions for both the backend and frontend.
+
+Markdown Formatting and Structure: Provided technical guidance and generated HTML/Markdown code to implement complex visual elements, such as displaying multiple images side-by-side (using tables and flexbox CSS in HTML), and defining the current structured layout.
+
+Section Integration: Assisted in planning and integrating specific requested sections, like this "My AI Usage" section, ensuring proper flow and Markdown consistency within the overall document.
+
+The output from the AI was used as a starting template and for enhancing formatting details, which was then reviewed and adapted to accurately reflect the SweetShop2 project structure.
+
+
+
+
+
+
